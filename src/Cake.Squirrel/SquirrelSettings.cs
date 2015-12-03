@@ -22,7 +22,7 @@ namespace Cake.Squirrel {
         /// <value>
         ///     Path to the NuGet Packages directory for C# apps
         /// </value>
-        public DirectoryPath PackagesDirecotry { get; set; }
+        public DirectoryPath PackagesDirectory { get; set; }
 
         /// <summary>
         ///     Gets or sets the Setup.exe for boostrapping.

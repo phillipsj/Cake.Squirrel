@@ -22,7 +22,7 @@ namespace Cake.Squirrel {
             : base(fileSystem, environment, processRunner, globber) {}
 
 
-        public void Releasify(FilePath nugetPackage, SquirrelSettings settings) {
+        public void Run(FilePath nugetPackage, SquirrelSettings settings) {
             if (nugetPackage == null) {
                 throw new ArgumentNullException(nameof(nugetPackage));
             }
@@ -38,8 +38,32 @@ namespace Cake.Squirrel {
             var builder = new ProcessArgumentBuilder();
             builder.Append("--releasify {0}", nugetPackage.FullPath);
 
-            if (settings.ReleaseDirectory == null) {
+            if (settings.ReleaseDirectory != null) {
                 builder.Append("--releaseDir {0}", settings.ReleaseDirectory.FullPath);
+            }
+            if (settings.PackagesDirectory != null) {
+                builder.Append("--packagesDir {0}", settings.PackagesDirectory.FullPath);
+            }
+            if (settings.BootstrapperExe != null) {
+                builder.Append("--bootstrapperExe {0}", settings.BootstrapperExe.FullPath);
+            }
+            if (settings.LoadingGif != null) {
+                builder.Append("--loadingGif {0}", settings.LoadingGif.FullPath);
+            }
+            if (settings.Icon != null) {
+                builder.Append("--icon {0}", settings.Icon.FullPath);
+            }
+            if (settings.SetupIcon != null) {
+                builder.Append("--setupIcon {0}", settings.SetupIcon.FullPath);
+            }
+            if (!string.IsNullOrEmpty(settings.SigningParameters)) {
+                builder.Append("--signWithParams {0}", settings.SigningParameters);
+            }
+            if (settings.Silent) {
+                builder.Append("--silent");
+            }
+            if (settings.NoMsi) {
+                builder.Append("--no-msi");
             }
 
             return builder;
