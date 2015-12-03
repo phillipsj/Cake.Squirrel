@@ -1,17 +1,12 @@
 ﻿using Cake.Core.IO;
 using Cake.Core.Tooling;
 
-namespace Cake.Squirrel
-{
-    public class SquirrelSettings : ToolSettings
-    {
+namespace Cake.Squirrel {
+    public class SquirrelSettings : ToolSettings {
         /// <summary>
         ///     Initializes a new instance of the <see cref="SquirrelSettings"/> class.
         /// </summary>
-        public SquirrelSettings()
-        {
-            
-        }
+        public SquirrelSettings() {}
 
         /// <summary>
         ///     Gets or sets the release directory location.
