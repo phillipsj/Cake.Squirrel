@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Cake.Core;
+using Cake.Core.Diagnostics;
 using Cake.Core.IO;
 using Cake.Core.Tooling;
 
@@ -9,7 +10,6 @@ namespace Cake.Squirrel {
     /// The Squirrel package runner.
     /// </summary>
     public class SquirrelRunner : Tool<SquirrelSettings> {
-        private readonly ICakeEnvironment _environment;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SquirrelRunner"/> class.
@@ -19,7 +19,9 @@ namespace Cake.Squirrel {
         /// <param name="globber"></param>
         /// <param name="processRunner"></param>
         public SquirrelRunner(IFileSystem fileSystem, ICakeEnvironment environment, IGlobber globber, IProcessRunner processRunner)
-            : base(fileSystem, environment, processRunner, globber) {}
+            : base(fileSystem, environment, processRunner, globber) {
+           
+        }
 
 
         public void Run(FilePath nugetPackage, SquirrelSettings settings) {
@@ -37,7 +39,6 @@ namespace Cake.Squirrel {
         private ProcessArgumentBuilder GetArguments(FilePath nugetPackage, SquirrelSettings settings) {
             var builder = new ProcessArgumentBuilder();
             builder.Append("--releasify {0}", nugetPackage.FullPath);
-
             if (settings.ReleaseDirectory != null) {
                 builder.Append("--releaseDir {0}", settings.ReleaseDirectory.FullPath);
             }
