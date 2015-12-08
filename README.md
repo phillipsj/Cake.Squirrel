@@ -51,8 +51,8 @@ To use the addin just add it to Cake call the aliases and configure any settings
 // How to package with no settings
 Task("PackageNoSettings")
 	.Does(() => {
-		Squirrel(GetFile("Package.nupkg");
-	)};
+		Squirrel(GetFile("Package.nupkg"));
+	});
 	
 // How to package with the settings
 Task("PackageWithSettings")
@@ -61,8 +61,8 @@ Task("PackageWithSettings")
 		settings.NoMsi = true;
 		settings.Silent = true;
 		
-		Squirrel(GetFile("Package.nupkg", settings);
-	)};
+		Squirrel(GetFile("Package.nupkg", settings));
+	});
 ```
 
 Thats it. 
