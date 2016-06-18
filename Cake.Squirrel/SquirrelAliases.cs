@@ -8,22 +8,42 @@ namespace Cake.Squirrel {
     /// Contains functionality related to running Squirrel.
     /// </summary>
     [CakeAliasCategory("Squirrel")]
-    public static class SquirrelAliases {
+    public static class SquirrelAliases
+    {
         /// <summary>
         /// Runs Squirrel Releasify against the specified NuGet package.
         /// </summary>
+        /// <example>
+        /// <code>
+        /// Task("PackageNoSettings")
+        ///  .Does(() => {
+        ///    Squirrel(GetFile("Package.nupkg"));
+        /// });
+        /// </code>
+        /// </example>
         /// <param name="context">The context.</param>
         /// <param name="nugetPackage">NuGet package to releasify.</param>
         [CakeMethodAlias]
         public static void Squirrel(this ICakeContext context, FilePath nugetPackage) {
             Squirrel(context, nugetPackage, new SquirrelSettings());
-
         }
 
         /// <summary>
         /// Runs Squirrel Releasify against the specified NuGet package
         /// using the specified settings.
         /// </summary>
+        /// <example>
+        /// <code>
+        /// Task("PackageWithSettings")
+        ///  .Does(() => {
+        ///    var settings = new SquirrelSettings();
+        ///    settings.NoMsi = true;
+        ///    settings.Silent = true;
+        /// 
+        ///    Squirrel(GetFile("Package.nupkg", settings));
+        /// });
+        /// </code>
+        /// </example>
         /// <param name="context">The context.</param>
         /// <param name="nugetPackage">NuGet package to releasify.</param>
         /// <param name="settings">The settings.</param>
