@@ -44,6 +44,7 @@ Options:
 To use the addin just add it to Cake call the aliases and configure any settings you want.
 
 ```csharp
+#tool "Squirrel.Windows" 
 #addin Cake.Squirrel
 
 ...

@@ -15,6 +15,9 @@ namespace Cake.Squirrel {
         /// </summary>
         /// <example>
         /// <code>
+        /// #tool "Squirrel.Windows" 
+        /// #addin Cake.Squirrel
+        /// 
         /// Task("PackageNoSettings")
         ///  .Does(() => {
         ///    Squirrel(GetFile("Package.nupkg"));
@@ -34,6 +37,9 @@ namespace Cake.Squirrel {
         /// </summary>
         /// <example>
         /// <code>
+        /// #tool "Squirrel.Windows" 
+        /// #addin Cake.Squirrel
+        /// 
         /// Task("PackageWithSettings")
         ///  .Does(() => {
         ///    var settings = new SquirrelSettings();
