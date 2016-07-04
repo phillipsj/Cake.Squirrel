@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Cake.Core;
-using Cake.Core.Diagnostics;
 using Cake.Core.IO;
 using Cake.Core.Tooling;
 
@@ -22,8 +21,7 @@ namespace Cake.Squirrel {
             : base(fileSystem, environment, processRunner, globber) {
            
         }
-
-
+        
         public void Run(FilePath nugetPackage, SquirrelSettings settings) {
             if (nugetPackage == null) {
                 throw new ArgumentNullException(nameof(nugetPackage));
@@ -35,6 +33,24 @@ namespace Cake.Squirrel {
 
             Run(settings, GetArguments(nugetPackage, settings));
         }
+
+        public void Run(FilePath nugetPackage, SquirrelSettings settings, ProcessSettings processSettings)
+        {
+            if (nugetPackage == null)
+            {
+                throw new ArgumentNullException(nameof(nugetPackage));
+            }
+
+            if (settings == null)
+            {
+                throw new ArgumentNullException(nameof(settings));
+            }
+            if (settings == null) {
+                throw new ArgumentNullException(nameof(processSettings));
+            }
+            Run(settings, GetArguments(nugetPackage, settings), processSettings, null);
+        }
+
 
         private ProcessArgumentBuilder GetArguments(FilePath nugetPackage, SquirrelSettings settings) {
             var builder = new ProcessArgumentBuilder();
