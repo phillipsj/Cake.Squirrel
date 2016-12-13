@@ -61,7 +61,7 @@ namespace Cake.Squirrel {
             if (nugetPackage == null) {
                 throw new ArgumentNullException(nameof(nugetPackage));
             }
-            var runner = new SquirrelRunner(context.FileSystem, context.Environment, context.Globber, context.ProcessRunner);
+            var runner = new SquirrelRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
             runner.Run(nugetPackage, settings);
         }
 
@@ -101,7 +101,7 @@ namespace Cake.Squirrel {
             {
                 throw new ArgumentNullException(nameof(nugetPackage));
             }
-            var runner = new SquirrelRunner(context.FileSystem, context.Environment, context.Globber, context.ProcessRunner);
+            var runner = new SquirrelRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
             runner.Run(nugetPackage, settings, new ProcessSettings { RedirectStandardOutput = redirectStandardOutput, Silent = silent});
         }
     }
