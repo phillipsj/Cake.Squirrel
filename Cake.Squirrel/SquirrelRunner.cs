@@ -9,16 +9,15 @@ namespace Cake.Squirrel {
     /// The Squirrel package runner.
     /// </summary>
     public class SquirrelRunner : Tool<SquirrelSettings> {
-
         /// <summary>
         /// Initializes a new instance of the <see cref="SquirrelRunner"/> class.
         /// </summary>
         /// <param name="fileSystem"></param>
         /// <param name="environment"></param>
-        /// <param name="globber"></param>
         /// <param name="processRunner"></param>
-        public SquirrelRunner(IFileSystem fileSystem, ICakeEnvironment environment, IGlobber globber, IProcessRunner processRunner)
-            : base(fileSystem, environment, processRunner, globber) {
+        /// <param name="tools"></param>
+        public SquirrelRunner(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools)
+            : base(fileSystem, environment, processRunner, tools) {
            
         }
         
