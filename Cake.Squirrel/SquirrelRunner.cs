@@ -73,7 +73,7 @@ namespace Cake.Squirrel {
                 builder.Append("--setupIcon {0}", settings.SetupIcon.FullPath);
             }
             if (!string.IsNullOrEmpty(settings.SigningParameters)) {
-                builder.Append("--signWithParams {0}", settings.SigningParameters);
+                builder.Append("--signWithParams \"{0}\"", settings.SigningParameters);
             }
             if (settings.Silent) {
                 builder.Append("--silent");
