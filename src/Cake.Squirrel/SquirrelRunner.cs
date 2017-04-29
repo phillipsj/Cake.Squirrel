@@ -18,9 +18,13 @@ namespace Cake.Squirrel {
         /// <param name="tools"></param>
         public SquirrelRunner(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools)
             : base(fileSystem, environment, processRunner, tools) {
-           
+
         }
-        
+        /// <summary>
+        /// Executes Squirrel with the specificed parameters.
+        /// </summary>
+        /// <param name="nugetPackage">The nuget package.</param>
+        /// <param name="settings">The settings.</param>
         public void Run(FilePath nugetPackage, SquirrelSettings settings) {
             if (nugetPackage == null) {
                 throw new ArgumentNullException(nameof(nugetPackage));
@@ -33,15 +37,18 @@ namespace Cake.Squirrel {
             Run(settings, GetArguments(nugetPackage, settings));
         }
 
-        public void Run(FilePath nugetPackage, SquirrelSettings settings, ProcessSettings processSettings)
-        {
-            if (nugetPackage == null)
-            {
+        /// <summary>
+        ///  Executes Squirrel with the specificed parameters.
+        /// </summary>
+        /// <param name="nugetPackage">The nuget package.</param>
+        /// <param name="settings">The settings.</param>
+        /// <param name="processSettings">The process settings.</param>
+        public void Run(FilePath nugetPackage, SquirrelSettings settings, ProcessSettings processSettings) {
+            if (nugetPackage == null) {
                 throw new ArgumentNullException(nameof(nugetPackage));
             }
 
-            if (settings == null)
-            {
+            if (settings == null) {
                 throw new ArgumentNullException(nameof(settings));
             }
             if (settings == null) {
@@ -90,7 +97,7 @@ namespace Cake.Squirrel {
         /// </summary>
         /// <returns>The name of the tool.</returns>
         protected override IEnumerable<string> GetToolExecutableNames() {
-            return new[] {"Squirrel.exe"};
+            return new[] { "Squirrel.exe" };
         }
 
         /// <summary>

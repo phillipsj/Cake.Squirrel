@@ -58,9 +58,6 @@ namespace Cake.Squirrel {
             if (context == null) {
                 throw new ArgumentNullException(nameof(context));
             }
-            if (nugetPackage == null) {
-                throw new ArgumentNullException(nameof(nugetPackage));
-            }
             var runner = new SquirrelRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
             runner.Run(nugetPackage, settings);
         }
@@ -91,18 +88,12 @@ namespace Cake.Squirrel {
         /// <param name="redirectStandardOutput">Sets if the output of an tool is written to the <see cref="P:System.Diagnostics.Process.StandardOutput"/> stream.</param>
         /// <param name="silent">Sets if the tool output should be suppressed.</param>
         [CakeMethodAlias]
-        public static void Squirrel(this ICakeContext context, FilePath nugetPackage, SquirrelSettings settings, bool redirectStandardOutput, bool silent)
-        {
-            if (context == null)
-            {
+        public static void Squirrel(this ICakeContext context, FilePath nugetPackage, SquirrelSettings settings, bool redirectStandardOutput, bool silent) {
+            if (context == null) {
                 throw new ArgumentNullException(nameof(context));
             }
-            if (nugetPackage == null)
-            {
-                throw new ArgumentNullException(nameof(nugetPackage));
-            }
             var runner = new SquirrelRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
-            runner.Run(nugetPackage, settings, new ProcessSettings { RedirectStandardOutput = redirectStandardOutput, Silent = silent});
+            runner.Run(nugetPackage, settings, new ProcessSettings { RedirectStandardOutput = redirectStandardOutput, Silent = silent });
         }
     }
 }
