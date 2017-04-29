@@ -15,10 +15,7 @@ namespace Cake.Squirrel {
         /// <param name="fileSystem"></param>
         /// <param name="environment"></param>
         /// <param name="processRunner"></param>
-<<<<<<< HEAD
-=======
         /// <param name="tools"></param>
->>>>>>> refs/remotes/origin/master
         public SquirrelRunner(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools)
             : base(fileSystem, environment, processRunner, tools) {
            
