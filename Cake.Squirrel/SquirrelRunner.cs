@@ -53,7 +53,7 @@ namespace Cake.Squirrel {
 
         private ProcessArgumentBuilder GetArguments(FilePath nugetPackage, SquirrelSettings settings) {
             var builder = new ProcessArgumentBuilder();
-            builder.Append("--releasify {0}", nugetPackage.FullPath);
+            builder.Append("--releasify \"{0}\"", nugetPackage.FullPath);
             if (settings.ReleaseDirectory != null) {
                 builder.Append("--releaseDir {0}", settings.ReleaseDirectory.FullPath);
             }
