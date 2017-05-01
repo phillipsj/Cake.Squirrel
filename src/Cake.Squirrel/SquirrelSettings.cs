@@ -2,6 +2,9 @@
 using Cake.Core.Tooling;
 
 namespace Cake.Squirrel {
+    /// <summary>
+    /// Contains settings used by <see cref="SquirrelRunner"/>.
+    /// </summary>
     public class SquirrelSettings : ToolSettings {
         /// <summary>
         ///     Initializes a new instance of the <see cref="SquirrelSettings"/> class.
