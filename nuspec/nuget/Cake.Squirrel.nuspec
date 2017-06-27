@@ -9,6 +9,7 @@
     <licenseUrl>https://github.com/cake-contrib/Cake.Squirrel/blob/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/cake-contrib/Cake.Squirrel</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</iconUrl>
     <description>Cake Addin to Add Squirrel.Windows support.</description>
     <copyright>Copyright (c) 2015 - Present</copyright>
     <tags>Cake Squirrel</tags>
