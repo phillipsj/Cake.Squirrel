@@ -82,9 +82,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Fixture\SquirrelRunnerFixture.cs" />
+    <Compile Include="Fixture\SyncReleasesRunnerFixture.cs" />
     <Compile Include="SquirrelAliasesTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SquirrelRunnerTests.cs" />
+    <Compile Include="SyncReleasesRunnerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
