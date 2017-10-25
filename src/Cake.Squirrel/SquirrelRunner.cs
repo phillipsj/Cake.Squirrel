@@ -88,6 +88,9 @@ namespace Cake.Squirrel {
             if (settings.NoMsi) {
                 builder.Append("--no-msi");
             }
+            if (!string.IsNullOrWhiteSpace(settings.FrameworkVersion)) {
+                builder.Append("--framework-version {0}", settings.FrameworkVersion);
+            }
 
             return builder;
         }
