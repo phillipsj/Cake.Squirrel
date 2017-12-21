@@ -91,7 +91,9 @@ namespace Cake.Squirrel {
             if (!string.IsNullOrWhiteSpace(settings.FrameworkVersion)) {
                 builder.Append("--framework-version {0}", settings.FrameworkVersion);
             }
-
+            if (settings.NoDelta) {
+                builder.Append("--no-delta");
+            }
             return builder;
         }
 

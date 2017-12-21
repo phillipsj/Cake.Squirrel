@@ -98,5 +98,13 @@ namespace Cake.Squirrel {
         ///     .NET framework version, e.g. net461
         /// </value>
         public string FrameworkVersion { get; set; }
+
+        /// <summary>
+        /// Gets or sets Don't generate delta packages to save time. 
+        /// </summary>
+        /// <value>
+        ///     <c>true</c> to not generate delta packages; otherwise, <c>false</c>.
+        /// </value>
+        public bool NoDelta { get; set; }
     }
 }
