@@ -20,7 +20,7 @@ namespace Cake.Squirrel {
         /// 
         /// Task("PackageNoSettings")
         ///  .Does(() => {
-        ///    Squirrel(GetFile("Package.nupkg"));
+        ///    Squirrel(File("Package.nupkg"));
         /// });
         /// </code>
         /// </example>
@@ -46,7 +46,7 @@ namespace Cake.Squirrel {
         ///    settings.NoMsi = true;
         ///    settings.Silent = true;
         /// 
-        ///    Squirrel(GetFile("Package.nupkg"), settings);
+        ///    Squirrel(File("Package.nupkg"), settings);
         /// });
         /// </code>
         /// </example>
@@ -78,7 +78,7 @@ namespace Cake.Squirrel {
         ///    settings.NoMsi = true;
         ///    settings.Silent = true; 
         /// 
-        ///    Squirrel(GetFile("Package.nupkg"), settings, true, false);
+        ///    Squirrel(File("Package.nupkg"), settings, true, false);
         /// });
         /// </code>
         /// </example>
