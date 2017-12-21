@@ -15,8 +15,8 @@
     <tags>Cake Squirrel</tags>
   </metadata>
   <files>
-    <file src="Cake.Squirrel.dll" target="lib\net45" />
-    <file src="Cake.Squirrel.pdb" target="lib\net45" />
-    <file src="Cake.Squirrel.xml" target="lib\net45" />
+    <file src="Cake.Squirrel.dll" target="lib\net46" />
+    <file src="Cake.Squirrel.pdb" target="lib\net46" />
+    <file src="Cake.Squirrel.xml" target="lib\net46" />
   </files>
 </package>
