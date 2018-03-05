@@ -90,5 +90,21 @@ namespace Cake.Squirrel {
         ///     <c>true</c> to not generate an MSI package; otherwise, <c>false</c>.
         /// </value>
         public bool NoMsi { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the required .NET framework version
+        /// </summary>
+        /// <value>
+        ///     .NET framework version, e.g. net461
+        /// </value>
+        public string FrameworkVersion { get; set; }
+
+        /// <summary>
+        /// Gets or sets Don't generate delta packages to save time. 
+        /// </summary>
+        /// <value>
+        ///     <c>true</c> to not generate delta packages; otherwise, <c>false</c>.
+        /// </value>
+        public bool NoDelta { get; set; }
     }
 }

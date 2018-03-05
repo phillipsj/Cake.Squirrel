@@ -112,5 +112,19 @@ namespace Cake.Squirrel.Tests {
             // Then
             result.Args.ShouldEqual("--releasify \"Package.nupkg\"");
         }
+
+        [Fact]
+        public void Should_Include_No_Delta_Flag_To_Arguments()
+        {
+            // Given 
+            var fixture = new SquirrelRunnerFixture();
+
+            // When
+            fixture.Settings.NoDelta = true;
+            var result = fixture.Run();
+
+            // Then
+            result.Args.ShouldEqual("--releasify \"Package.nupkg\" --no-delta");
+        }
     }
 }
