@@ -35,8 +35,8 @@
     <DocumentationFile>bin\Release\Cake.Squirrel.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Cake.Core, Version=0.22.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Cake.Core.0.22.2\lib\net46\Cake.Core.dll</HintPath>
+    <Reference Include="Cake.Core, Version=0.26.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cake.Core.0.26.1\lib\net46\Cake.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
