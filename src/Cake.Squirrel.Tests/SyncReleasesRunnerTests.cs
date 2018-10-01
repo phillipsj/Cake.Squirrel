@@ -2,7 +2,7 @@
 using Cake.Core;
 using Cake.Squirrel.Tests.Fixture;
 using Cake.Testing;
-using Should;
+using FluentAssertions;
 using Xunit;
 
 namespace Cake.Squirrel.Tests {
@@ -17,7 +17,7 @@ namespace Cake.Squirrel.Tests {
             var result = Record.Exception(() => fixture.Run());
 
             // Then
-            result.ShouldBeType<ArgumentNullException>().ParamName.ShouldEqual("settings");
+            result.Should().BeOfType<ArgumentNullException>().Subject.ParamName.Should().Equals("settings");
         }
 
         [Fact]
@@ -30,7 +30,7 @@ namespace Cake.Squirrel.Tests {
             var result = Record.Exception(() => fixture.Run());
 
             // Then
-            result.ShouldBeType<CakeException>().Message.ShouldEqual("SyncReleases: Could not locate executable.");
+            result.Should().BeOfType<CakeException>().Subject.Message.Should().Equals("SyncReleases: Could not locate executable.");
         }
 
         [Theory]
@@ -46,7 +46,7 @@ namespace Cake.Squirrel.Tests {
             var result = fixture.Run();
 
             // Then
-            result.Path.FullPath.ShouldEqual(expected);
+            result.Path.FullPath.Should().Equals(expected);
         }
 
         [Fact]
@@ -59,7 +59,7 @@ namespace Cake.Squirrel.Tests {
             var result = Record.Exception(() => fixture.Run());
 
             // Then
-            result.ShouldBeType<CakeException>().Message.ShouldEqual("SyncReleases: Process was not started.");
+            result.Should().BeOfType<CakeException>().Subject.Message.Should().Equals("SyncReleases: Process was not started.");
         }
 
         [Fact]
@@ -72,8 +72,8 @@ namespace Cake.Squirrel.Tests {
             var result = Record.Exception(() => fixture.Run());
 
             // Then
-            result.ShouldBeType<CakeException>()
-                .Message.ShouldEqual("SyncReleases: Process returned an error (exit code 1).");
+            result.Should().BeOfType<CakeException>()
+                .Subject.Message.Should().Equals("SyncReleases: Process returned an error (exit code 1).");
         }
 
         [Fact]
@@ -85,7 +85,7 @@ namespace Cake.Squirrel.Tests {
             var result = fixture.Run();
 
             // Then
-            result.Path.FullPath.ShouldEqual("/Working/tools/SyncReleases.exe");
+            result.Path.FullPath.Should().Equals("/Working/tools/SyncReleases.exe");
         }
 
         [Fact]
@@ -98,7 +98,7 @@ namespace Cake.Squirrel.Tests {
             var result = fixture.Run();
 
             // Then
-            result.Args.ShouldEqual("--url https://google.com");
+            result.Args.Should().Equals("--url https://google.com");
         }
     }
 }

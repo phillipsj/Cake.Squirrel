@@ -1,9 +1,9 @@
 ﻿using Cake.Squirrel.Tests.Fixture;
 using System;
 using Xunit;
-using Should;
 using Cake.Core;
 using Cake.Testing;
+using FluentAssertions;
 
 namespace Cake.Squirrel.Tests {
     public class SquirrelRunnerTests {
@@ -17,7 +17,7 @@ namespace Cake.Squirrel.Tests {
             var result = Record.Exception(() => fixture.Run());
 
             // Then
-            result.ShouldBeType<ArgumentNullException>().ParamName.ShouldEqual("nugetPackage");
+            result.Should().BeOfType<ArgumentNullException>().Subject.ParamName.Should().Equals("nugetPackage");
         }
 
         [Fact]
@@ -30,7 +30,7 @@ namespace Cake.Squirrel.Tests {
             var result = Record.Exception(() => fixture.Run());
 
             // Then
-            result.ShouldBeType<ArgumentNullException>().ParamName.ShouldEqual("settings");
+            result.Should().BeOfType<ArgumentNullException>().Subject.ParamName.Should().Equals("settings");
         }
 
         [Fact]
@@ -43,7 +43,7 @@ namespace Cake.Squirrel.Tests {
             var result = Record.Exception(() => fixture.Run());
 
             // Then
-            result.ShouldBeType<CakeException>().Message.ShouldEqual("Squirrel: Could not locate executable.");
+            result.Should().BeOfType<CakeException>().Subject.Message.Should().Equals("Squirrel: Could not locate executable.");
         }
 
         [Theory]
@@ -59,7 +59,7 @@ namespace Cake.Squirrel.Tests {
             var result = fixture.Run();
 
             // Then
-            result.Path.FullPath.ShouldEqual(expected);
+            result.Path.FullPath.Should().Equals(expected);
         }
 
         [Fact]
@@ -72,7 +72,7 @@ namespace Cake.Squirrel.Tests {
             var result = Record.Exception(() => fixture.Run());
 
             // Then
-            result.ShouldBeType<CakeException>().Message.ShouldEqual("Squirrel: Process was not started.");
+            result.Should().BeOfType<CakeException>().Subject.Message.Should().Equals("Squirrel: Process was not started.");
         }
 
         [Fact]
@@ -85,8 +85,8 @@ namespace Cake.Squirrel.Tests {
             var result = Record.Exception(() => fixture.Run());
 
             // Then
-            result.ShouldBeType<CakeException>()
-                .Message.ShouldEqual("Squirrel: Process returned an error (exit code 1).");
+            result.Should().BeOfType<CakeException>()
+                .Subject.Message.Should().Equals("Squirrel: Process returned an error (exit code 1).");
         }
 
         [Fact]
@@ -98,7 +98,7 @@ namespace Cake.Squirrel.Tests {
             var result = fixture.Run();
 
             // Then
-            result.Path.FullPath.ShouldEqual("/Working/tools/Squirrel.exe");
+            result.Path.FullPath.Should().Equals("/Working/tools/Squirrel.exe");
         }
 
         [Fact]
@@ -110,7 +110,7 @@ namespace Cake.Squirrel.Tests {
             var result = fixture.Run();
 
             // Then
-            result.Args.ShouldEqual("--releasify \"Package.nupkg\"");
+            result.Args.Should().Equals("--releasify \"Package.nupkg\"");
         }
 
         [Fact]
@@ -124,7 +124,7 @@ namespace Cake.Squirrel.Tests {
             var result = fixture.Run();
 
             // Then
-            result.Args.ShouldEqual("--releasify \"Package.nupkg\" --no-delta");
+            result.Args.Should().Equals("--releasify \"Package.nupkg\" --no-delta");
         }
     }
 }
