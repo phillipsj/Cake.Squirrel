@@ -1,9 +1,9 @@
 ﻿using Cake.Squirrel.Tests.Fixture;
 using System;
 using Xunit;
-using Should;
 using NSubstitute;
 using Cake.Core;
+using FluentAssertions;
 
 namespace Cake.Squirrel.Tests {
     public class SquirrelAliasesTests {
@@ -16,7 +16,7 @@ namespace Cake.Squirrel.Tests {
             var result = Record.Exception(() => SquirrelAliases.Squirrel(null, fixture.NuGetPath, fixture.Settings));
 
             // Then
-            result.ShouldBeType<ArgumentNullException>().ParamName.ShouldEqual("context");
+            result.Should().BeOfType<ArgumentNullException>().Subject.ParamName.Should().Equals("context");
         }
 
         [Fact]
@@ -29,7 +29,7 @@ namespace Cake.Squirrel.Tests {
             var result = Record.Exception(() => SquirrelAliases.Squirrel(context, null, fixture.Settings));
 
             // Then
-            result.ShouldBeType<ArgumentNullException>().ParamName.ShouldEqual("nugetPackage");
+            result.Should().BeOfType<ArgumentNullException>().Subject.ParamName.Should().Equals("nugetPackage");
         }
 
         [Fact]
@@ -42,7 +42,7 @@ namespace Cake.Squirrel.Tests {
             var result = Record.Exception(() => SquirrelAliases.Squirrel(context, fixture.NuGetPath, null));
 
             // Then
-            result.ShouldBeType<ArgumentNullException>().ParamName.ShouldEqual("settings");
+            result.Should().BeOfType<ArgumentNullException>().Subject.ParamName.Should().Equals("settings");
         }
     }
 }
