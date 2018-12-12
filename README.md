@@ -2,7 +2,7 @@
 
 A Cake Addin for [Squirrel.Windows](https://github.com/Squirrel/Squirrel.Windows).
 
-[![Build status](https://ci.appveyor.com/api/projects/status/vj5f1md7k7jucml7?svg=true)](https://ci.appveyor.com/project/phillipsj/cake-squirrel)
+[![Build status](https://ci.appveyor.com/api/projects/status/6bv8xgvgr5acpdki?svg=true)](https://ci.appveyor.com/project/cakecontrib/cake-squirrel)
 
 [![cakebuild.net](https://img.shields.io/badge/WWW-cakebuild.net-blue.svg)](http://cakebuild.net/)
 
