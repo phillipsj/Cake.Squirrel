@@ -11,6 +11,7 @@ A Cake Addin for [Squirrel.Windows](https://github.com/Squirrel/Squirrel.Windows
 ## Functionality
 
 Supports all the current command line options provided by Squirrel.Windows
+
 ```cmd
 Usage: Squirrel.exe command [OPTS]
 Manages Squirrel packages
@@ -44,7 +45,7 @@ Options:
 To use the addin just add it to Cake call the aliases and configure any settings you want.
 
 ```csharp
-#tool "Squirrel.Windows" 
+#tool "Squirrel.Windows"
 #addin Cake.Squirrel
 
 ...
@@ -66,7 +67,10 @@ Task("PackageWithSettings")
 	});
 ```
 
-Thats it. 
+Thats it.
 
 Hope you enjoy using.
 
+## Support
+
+If you would like to support this project, there are several opportunities. Pull Requests, bug reports, documentation, promotion, and encouragement are all great ways. If you would like to contribute monetarily, you can [Buy Me a Coffee](https://www.buymeacoffee.com/aQPnJ73O8).
