@@ -10,7 +10,9 @@ BuildParameters.SetParameters(context: Context,
                             repositoryName: "Cake.Squirrel",
                             appVeyorAccountName: "cakecontrib",
                             shouldRunDupFinder: false,
-                            shouldRunInspectCode: false);
+                            shouldRunInspectCode: false,
+                            shouldRunGitVersion: DirectoryExists(".git"), // This would allow building even without using a git repository
+                            shouldRunDotNetCorePack: true);
 
 BuildParameters.PrintParameters(Context);
 
