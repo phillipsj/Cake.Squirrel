@@ -13,7 +13,7 @@
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/cake-contrib/Cake.Squirrel</PackageProjectUrl>
     <PackageTags>Cake;Script;Build;Squirrel</PackageTags>
-    <RepositoryUrl>$(PackageProjectUrl)</RepositoryUrl>  
+    <RepositoryUrl>$(PackageProjectUrl).git</RepositoryUrl>  
     <RepositoryType>git</RepositoryType>  
   </PropertyGroup>
 
